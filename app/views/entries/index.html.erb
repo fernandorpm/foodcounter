@@ -1,0 +1,64 @@
+<% content_for :title do %>
+  Foodcounter &ndash; <%= DateTime.now.to_s(:nice_date) %>
+<% end %>
+
+<div class="columns is-centered mt-6">
+  <nav class="level is-mobile column is-half">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Calories</p>
+        <p class="title"><%= @entries.pluck(:calories).sum %></p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Proteins</p>
+        <p class="title"><%= @entries.pluck(:proteins).sum %>g</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Carbohydrates</p>
+        <p class="title"><%= @entries.pluck(:carbohydrates).sum %>g</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">Fats</p>
+        <p class="title"><%= @entries.pluck(:fats).sum %>g</p>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="columns mt-1 is-centered">
+
+  <% @entries.each do |entry| %>
+    <div class="column is-one-quarter">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title"><%= entry.meal_type %></p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p><span class="has-text-weight-bold"><%= entry.calories %></span> calories</p>
+            <p><span class="has-text-weight-bold"><%= entry.proteins %></span> g of proteins</p>
+            <p><span class="has-text-weight-bold"><%= entry.carbohydrates %></span> g of carbohydrates</p>
+            <p><span class="has-text-weight-bold"><%= entry.fats %></span> g of fats</p>
+            <p class="italic">Logged <%= time_ago_in_words(entry.created_at) %> ago</p>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <%= link_to 'Show' , entry, class: "card-footer-item" %>
+          <%= link_to 'Edit' , edit_entry_path(entry), class: "card-footer-item" %>
+          <%= link_to 'Delete' , entry, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+</div>
+
+<div class="columns is-centered mt-6">
+  <%= link_to 'View all Entries', archives_index_path, class: "button is-info is-outlined is-centered" %>
+</div>
