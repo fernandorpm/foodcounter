@@ -25,24 +25,33 @@ Foodcounter allows you to register all of your daily meals and visualize, update
 
 ### Setup
 
-Under construction
+- Create a new folder/directory for the project
+- Be sure to have a Github account and that this account is connected locally on your PC
 
 ### Install
 
-Under construction
+Run this commands in this order:
 
-### Usage
+To install the gems from the Gemfile.lock:
+- `bundle install`
 
-Under construction
+To migrate the database schema to a SQLite3 file
+- `rails db:migrate`
 
-### Run tests
+To start the server locally (http://127.0.0.1:3000/)
+- `rails server`
 
-Under construction
+### Troubleshooting
+
+#### Error "Webpacker::Manifest::MissingEntryError" on starting application
+
+- stop the web app
+- run `bundle exec rake webpacker:install`
+- run `rails server`
 
 ### Deployment
 
 Under construction
-
 
 
 ## Authors
@@ -62,12 +71,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
