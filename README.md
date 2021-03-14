@@ -54,7 +54,7 @@ To start the server locally (http://127.0.0.1:3000/)
 Under construction
 
 
-## Authors
+## Author
 
 👤 **Fernando R P Marques**
 
