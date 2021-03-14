@@ -12,11 +12,6 @@ Foodcounter allows you to register all of your daily meals and visualize, update
 - SQLite3
 - Bulma Framework
 
-## Live Demo
-
-[Live Demo Link](https://fernandorpm.github.io/foodcounter/)
-
-
 ## Getting Started
 > Under construction
 
