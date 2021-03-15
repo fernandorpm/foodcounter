@@ -32,6 +32,9 @@ Foodcounter allows you to register all of your daily meals and visualize, update
 
 Run this commands in this order:
 
+To clone the project into your computer:
+- `git clone https://github.com/fernandorpm/foodcounter.git`
+
 To install the gems from the Gemfile.lock:
 - `bundle install`
 
